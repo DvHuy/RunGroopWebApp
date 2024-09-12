@@ -35,12 +35,7 @@ namespace RunGroopWebApp.Repository
             return await _context.Races.Where(c => c.Address.City.Contains(city)).ToListAsync();
         }
 
-        public Task<Race> GetByIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task<Race> GetByIdÁsync(int id)
+        public async Task<Race> GetByIdAsync(int id)
         {
             return await _context.Races.Include(i => i.Address).FirstOrDefaultAsync();
         }
